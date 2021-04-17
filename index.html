@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css.css">
 </head>
-<header>
-        
-</header>
+
 <body>
-
-    <img src="/img/1.png" alt="A de Diamantes">
-    <img src="/img/2.png" alt="2 de Diamantes">
-    <img src="/img/3.png" alt="3 de Corazones">
-    <img src="/img/4.png" alt="4 de Corazones">
-    <img src="/img/5.png" alt="5 de Corazones">
-    <img src="/img/6.png" alt="6 de Trebol">
-    <img src="/img/7.png" alt="7 de Diamantes">
-    <img src="/img/8.png" alt="8 de Trebol">
-    <img src="/img/9.png" alt="9 de Diamantes">
-    <img src="/img/10.png" alt="10 de Corazones">
-    <img src="/img/11.png" alt="J de Trebol">
-    <img src="/img/12.png" alt="Q de Picas">
-    <img src="/img/13.png" alt="K de Diamantes">
-
-    <aside>
-        <h1>Listado de Cartas</h1>
-        <table id="tabla"></table>
-
+    <div class="contenedor">
+        <header class="header">
+           <h1>MAZO DE CARTAS</h1>
+        </header>
         
-        <script src="/JS.js"></script>
-    </aside>
-    
-</body>
-<footer>
+        <main class="main">
+            <img class="carta" src="/img/1.png">
+            <img class="carta" src="/img/2.png">
+            <img class="carta" src="/img/3.png">
+            <img class="carta" src="/img/4.png">
+            <img class="carta" src="/img/5.png">
+            <img class="carta" src="/img/6.png">
+            <img class="carta" src="/img/7.png">
+            <img class="carta" src="/img/8.png">
+            <img class="carta" src="/img/9.png">
+            <img class="carta" src="/img/10.png">
+            <img class="carta" src="/img/11.png">
+            <img class="carta" src="/img/12.png">
+            <img class="carta" src="/img/13.png">
+        </main>
 
-</footer>
+        <aside class="sidebar">
+            <table id="tabla">
+                <th>#</th>
+                <th>Carta</th>
+                <th>Cant</th>
+            </table>
+
+            <script src="/JS.js"></script>
+
+            <form action="">
+                <label for="number">Numero:</label>
+                <input type="text" name="number" id="number"> <br><br>
+                <label for="carta">carta:</label>
+                <input type="text" name="carta" id=carta><br><br>
+                <input type="submit" name="guardar" value="Guardar">
+            </form>
+
+        </aside>
+
+        <footer class="footer">
+            pie
+        </footer>
+
+    </div>
+</body>
+
 </html>

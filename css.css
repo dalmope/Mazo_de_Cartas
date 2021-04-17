@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.contenedor{
+  width: 90%;
+  max-width: 1400px;
+  margin: 20px auto;
+  display: grid;
+  gap	: 20px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6,auto);
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .main,
+.contenedor .footer,
+.contenedor .sidebar {
+  background: rgb(251, 251, 251);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.contenedor .header{
+  background: rebeccapurple;
+  grid-column-start: 1;
+  grid-column-end: 9;
+}
+
+.contenedor .main{  
+  background: black;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 8;
+
+}
+
+.contenedor .sidebar{  
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end: 9;
+}
+
+.carta{
+  width: 19.4%;
+}
+
+
+

@@ -1,13 +1,13 @@
 const url = `https://carlosreneas.github.io/endpoints/cartas.json`;
 
-const getData = async (url) => {
+async function getData(url) {
     try {
         const response = await fetch(url);
         if (response.ok) {
             const jsonResponse = await response.json();
-            return console.log(jsonResponse);
+            generarTabla(jsonResponse);
         }
-        throw new Error('Request failed!');
+        throw new Error('Request Failed!');
     } catch (error) {
         console.log(error);
     }
@@ -15,6 +15,7 @@ const getData = async (url) => {
 
 function generarTabla(json) {
     const tabla = document.getElementById("tabla")
+    console.log(json);
     const arr = json.data;
 
     arr.forEach(carta => {
@@ -36,5 +37,33 @@ function generarTabla(json) {
     });
 }
 
-const data = getData(url);
-generarTabla(data);
+function guardarCarta(numero, carta) {
+    if (!localStorage.getItem(numero)) {
+        //CREAMOS LA VARIABLE DE LOCALSTORAGE
+        carta = { numero: numero, carta: carta };
+        localStorage.setItem(carta, JSON.stringify(carta));
+
+        let dataStorage = JSON.parse(localStorage.getItem(numero));
+
+        dataStorage.numero = dataStorage.numero + 1;
+        localStorage.setItem(numero, JSON.stringify(dataStorage));
+
+    } else {
+        let dataStorage = JSON.parse(localStorage.getItem(numero));
+        dataStorage.numero = dataStorage.numero + 1;
+
+        localStorage.setItem(numero, JSON.stringify(dataStorage));
+    }
+}
+
+guardarCarta(6, "As de corazones");
+
+document.getElementById("guardar").onclick = function () {
+    guardarCarta()
+}
+
+getData(url);
+
+
+
+
